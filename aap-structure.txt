@@ -1,0 +1,13 @@
+SIC
+---app
+    |---user
+         |-- user.component.ts|.html
+         |--login (folder)
+         |-- registration (folder)
+
+        |___ shared
+            |--pipes
+                |-- first-key.pipe.ts
+            |--- services
+                  |-- auth.service.ts
+

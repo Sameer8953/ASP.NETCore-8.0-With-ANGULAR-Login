@@ -1,0 +1,60 @@
+<div class="mb-4 h2 text-success">
+    <h1  style="font-style: italic;" class="text-center">SignUp</h1>
+    <hr>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <input  class="form-control bg-body-secondary" 
+        placeholder="Full Name" formControlName="fullName">
+        <div class="error-feedback" *ngIf="hasDisplayableError('fullName') && form.controls.fullName.hasError('required')">
+            Please enter your full Name !
+        </div>
+    </div>
+    <div class="mb-3">
+        <input  class="form-control bg-body-secondary"placeholder="Email" formControlName="email">
+           <div class="error-feedback *ngIf=" *ngIf="hasDisplayableError('email')">
+                <div *ngIf="form.controls.email.hasError('required')">
+                    Please enter your Email ! 
+                </div>                     
+           </div>
+    </div>
+    <div class="mb-3">
+        <input  class="form-control bg-body-secondary" 
+        placeholder="Password" formControlName="password">
+        <div class="error-feedback" *ngIf="hasDisplayableError('password')">
+            <div *ngIf="form.controls.password.hasError('required')">
+                Please enter your password ! 
+            </div>  
+            <div *ngIf="form.controls.password.hasError('min-height')">
+                Please enter 6 characters required! 
+            </div>      
+            <div *ngIf="form.controls.password.hasError('pattern')">
+                Please enter One or more Special character(s) ! 
+            </div>                    
+       </div>
+    </div>
+    <div class="mb-3">
+        <input  class="form-control bg-body-secondary"
+         placeholder="Confirm Password" formControlName="confirmPassword">
+         <div class="error-feedback" *ngIf="hasDisplayableError('confirmPassword')">
+            <div *ngIf="form.controls.confirmPassword.hasError('required')">
+                Please enter your confirmPassword ! 
+            </div> 
+            <div *ngIf="form.controls.confirmPassword.hasError('min-height')">
+                Please enter 6 characters required! 
+            </div>      
+            <div *ngIf="form.controls.confirmPassword.hasError('pattern')">
+                Please enter One or more Special character(s) ! 
+            </div>                
+       </div>
+    </div>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-success w-100 rounded-3">
+            Register</button>
+    </div>
+    <!-- <div class="mt-4">
+        <p>Have an already register ?</p>
+        <button type="submit" class=" btn btn-primary">
+            Login</button>
+    </div> -->
+</form>
